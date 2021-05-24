@@ -1,0 +1,16 @@
+{
+  "name": "imagify",
+  "version": "1.0.0",
+  "description": "Imagify any link!",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node ./server/app.js"
+  },
+  "author": "bigansh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10"
+  }
+}
