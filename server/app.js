@@ -1,14 +1,23 @@
 const express = require('express'),
-	mongoose = require('mongoose'),
-	dotenv = require('dotenv').config()
+	dotenv = require('dotenv').config(),
+	app = express()
 
-const app = express()
+const dbConnect = require('./connections/mongoConnect')
+
+const loginRoute = require('./router/loginRoute')
+const dashboardRoute = require('./router/dashboardRoute')
+
+dbConnect()
 
 app.get('/', (req, res) => {
 	res.json({
 		message: 'Index',
 	})
 })
+
+app.use('/login', loginRoute)
+
+app.use('/dashboard', dashboardRoute)
 
 app.listen(process.env.PORT, () => {
 	console.log(
