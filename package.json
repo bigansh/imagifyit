@@ -2,9 +2,9 @@
   "name": "imagify",
   "version": "1.0.0",
   "description": "Imagify any link!",
-  "main": "server/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./server/app.js"
+    "start": "node app.js"
   },
   "author": "bigansh",
   "license": "ISC",

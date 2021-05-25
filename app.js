@@ -9,7 +9,7 @@ const dashboardRoute = require('./router/dashboardRoute')
 const redirectRoute = require('./router/redirectRoute')
 const legalRoute = require('./router/legalRoute')
 
-dbConnect()
+dbConnect(process.env.DATABASEURL)
 
 app.get('/', (req, res) => {
 	res.json({
