@@ -6,6 +6,8 @@ const dbConnect = require('./connections/mongoConnect')
 
 const loginRoute = require('./router/loginRoute')
 const dashboardRoute = require('./router/dashboardRoute')
+const redirectRoute = require('./router/redirectRoute')
+const legalRoute = require('./router/legalRoute')
 
 dbConnect()
 
@@ -18,6 +20,10 @@ app.get('/', (req, res) => {
 app.use('/login', loginRoute)
 
 app.use('/dashboard', dashboardRoute)
+
+app.use('/legal', legalRoute)
+
+app.use('/:slug', redirectRoute)
 
 app.listen(process.env.PORT, () => {
 	console.log(
