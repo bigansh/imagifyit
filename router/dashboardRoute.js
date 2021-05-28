@@ -2,9 +2,7 @@ const express = require('express'),
 	router = express.Router()
 
 router.get('/', (req, res) => {
-	res.json({
-		message: 'Dashboard',
-	})
+	res.render('dashboard')
 })
 
 module.exports = router

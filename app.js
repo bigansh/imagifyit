@@ -4,20 +4,21 @@ const express = require('express'),
 
 const dbConnect = require('./connections/mongoConnect')
 
-const loginRoute = require('./router/loginRoute')
+const authRoute = require('./router/authRoute')
 const dashboardRoute = require('./router/dashboardRoute')
 const redirectRoute = require('./router/redirectRoute')
 const legalRoute = require('./router/legalRoute')
 
-dbConnect(process.env.DATABASEURL)
+dbConnect(process.env.DATABASE_URL)
 
-app.get('/', (req, res) => {
-	res.json({
-		message: 'Index',
-	})
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+
+app.get('/', (_req, res) => {
+	res.render('index')
 })
 
-app.use('/login', loginRoute)
+app.use('/auth', authRoute)
 
 app.use('/dashboard', dashboardRoute)
 
