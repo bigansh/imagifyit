@@ -8,6 +8,7 @@ const authRoute = require('./router/authRoute')
 const dashboardRoute = require('./router/dashboardRoute')
 const redirectRoute = require('./router/redirectRoute')
 const legalRoute = require('./router/legalRoute')
+const createRoute = require('./router/createRoute')
 
 dbConnect(process.env.DATABASE_URL)
 
@@ -19,6 +20,8 @@ app.get('/', (_req, res) => {
 })
 
 app.use('/auth', authRoute)
+
+app.use('/create', createRoute)
 
 app.use('/dashboard', dashboardRoute)
 
