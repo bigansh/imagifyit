@@ -4,6 +4,7 @@ const userSchema = mongoose.Schema({
 	email: String,
 	image: String,
 	name: String,
+	id: String,
 	urls: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
