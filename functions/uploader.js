@@ -1,5 +1,6 @@
-const OG = require('../models/ogSchema'),
-	cloudinary = require('../connections/cloudinaryConnect')
+const OG = require('../models/ogSchema')
+
+const cloudinary = require('../connections/cloudinaryConnect')
 
 const schema = {
 	title: String,

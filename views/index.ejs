@@ -3,17 +3,51 @@
 	<head>
 		<!-- META TAGS -->
 		<%- include("partials/meta") %>
-		<!-- END META TAGS -->
 
 		<!-- LINK TAGS -->
 		<%- include("partials/link") %>
-		<!-- END LINK TAGS -->
+		<link rel="stylesheet" href="/styles/index.css">
 
 		<title>Imagify - Imagify Your Images</title>
 	</head>
 	<body>
+		<body id="body" class="bg-light">
+			<!-- Navbar -->
+			<%- include("partials/navbar") %> 
+	
+			<!-- Showcase -->
+			<section class="p-5">
+				<div
+					class="container text-center text-md-start d-md-flex align-items-center"
+				>
+					<div>
+						<h1 id="header" class="fw-bold">Go From Link To Image!</h1>
+						<p class="lead d-md-block d-none w-75" id="sub-header">
+							We help you convert links to a beautiful images making your content
+							stand out.
+						</p>
+						<p class="lead d-md-none" id="sub-header">
+							We help you convert links to a beautiful images making your content
+							stand out.
+						</p>
+						<button id="btn-showcase" class="btn btn-lg text-light">
+							<i class="bi bi-chevron-right"></i>
+							Get Started
+						</button>
+					</div>
+	
+					<div class="d-md-block d-none">
+						<img
+							src="/images/Index-Showcase.svg"
+							alt="#"
+							class="img-fluid"
+							id="showcase-img"
+						/>
+					</div>
+				</div>
+			</section>
+
 		<!-- SCRIPT TAGS -->
 		<%- include("partials/script") %>
-		<!-- END SCRIPT TAGS -->
 	</body>
 </html>

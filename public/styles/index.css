@@ -1,0 +1,28 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+#body {
+	font-family: 'Poppins';
+}
+
+#header {
+	color: #f29d35;
+}
+
+#sub-header {
+	color: #f25757;
+}
+
+#btn-showcase {
+	background: #96e6ad;
+}
+
+#showcase-img {
+	width: 80vh;
+}
+
+.navbar-dark {
+	background-color: #000;
+}
