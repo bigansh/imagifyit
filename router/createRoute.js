@@ -1,5 +1,6 @@
 const express = require('express'),
-	router = express.Router()
+	uniqid = require('uniqid')
+router = express.Router()
 
 const uploader = require('../functions/uploader')
 
@@ -8,12 +9,21 @@ router.get('/', (_req, res) => {
 })
 
 router.post('/', async (req, res) => {
+	let imageUrl
 
-	// const og = await uploader(req.body, id)
+	try {
+		if (req.body.base64URL) {
+			imageUrl = await uploader(req.body.base64URL)
 
-	// res.redirect('/create/details')
-	console.log(req.body)
-	res.redirect('/create/details')
+			console.log(imageUrl)
+
+			res.render('create', { imageUrl })
+		}
+	} catch (error) {
+		console.log(error)
+
+		res.send(error)
+	}
 })
 
 router.get('/details', async (_req, res) => {

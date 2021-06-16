@@ -6,8 +6,9 @@ const reader = new FileReader()
 
 uploader_input.addEventListener('change', () => {
 	reader.readAsDataURL(uploader_input.files[0])
+
 	reader.onload = (event) => {
-		const base64URL = event.target.result.split(',')[1]
+		const base64URL = event.target.result
 		
 		fetch('/create', {
 			method: 'POST',
@@ -18,10 +19,7 @@ uploader_input.addEventListener('change', () => {
 				base64URL,
 			}),
 		})
+
+		upload_form.submit()
 	}
 })
-
-// upload_form.addEventListener('submit', (event) => {
-// 	event.preventDefault()
-// 	console.log(base64URL)
-// })

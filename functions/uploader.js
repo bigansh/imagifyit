@@ -1,30 +1,14 @@
-const OG = require('../models/ogSchema')
-
 const cloudinary = require('../connections/cloudinaryConnect')
 
-const schema = {
-	title: String,
-	description: String,
-	image: String,
-	cardType: String,
-	id: String,
-}
-
-const uploader = async (data, id) => {
+const uploader = async (data) => {
 	try {
-		const image = await cloudinary.uploader.upload(data.imageStr, {
+		const image = await cloudinary.uploader.upload(data, {
 			upload_preset: 'imagify',
 		})
 
-		schema.title = data.title
-		schema.description = data.description
-		schema.image = image.url
-		schema.cardType = data.cardType
-		schema.id = id
-
-		return await OG.create(data)
+		return image.url
 	} catch (err) {
-		console.error(err)
+		throw new Error(err)
 	}
 }
 
