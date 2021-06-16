@@ -4,17 +4,22 @@ const express = require('express'),
 const uploader = require('../functions/uploader')
 
 router.get('/', (_req, res) => {
-	res.render('create')
+	res.render('upload')
 })
 
 router.post('/', async (req, res) => {
-	const ogSchema = await uploader(req.body, id)
 
-	if(req.cookies) {
-		
-	}
+	// const og = await uploader(req.body, id)
 
-	res.redirect('/create')
+	// res.redirect('/create/details')
+	console.log(req.body)
+	res.redirect('/create/details')
 })
+
+router.get('/details', async (_req, res) => {
+	res.render('create')
+})
+
+router.post('details', async (_req, res) => {})
 
 module.exports = router

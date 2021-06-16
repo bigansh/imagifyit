@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META TAGS -->
+		<%- include("partials/meta") %>
+
+		<!-- LINK TAGS -->
+		<%- include("partials/link") %>
+		<link rel="stylesheet" href="/styles/upload.css" />
+
+		<title>Upload / Imagify</title>
+	</head>
+	<body>
+		<body id="body" class="bg-light">
+			<!-- NAVBAR -->
+			<%- include("partials/navbar") %>
+
+			<!-- UPLOAD -->
+			<section class="p-5">
+				<div class="container text-center d-flex justify-content-center">
+					<form action="/create" id="upload-form" method="POST" class="w-75">
+						<div
+							id="uploader"
+							class="
+								rounded
+								text-center
+								d-flex
+								justify-content-center
+								align-items-center
+							"
+						>
+							<input
+								class=""
+								id="uploader-input"
+								accept="image/*"
+								type="file"
+							/>
+							<img
+								src="images/Upload.svg"
+								id="uploader-icon"
+								class="img-fluid"
+								alt="#"
+							/>
+							<p id="uploader-text" class="lead">Click or drop the image</p>
+						</div>
+						<input
+							type="text"
+							id="img-url"
+							name="url"
+							class="form-control form-control-lg w-75 mb-4"
+							placeholder="or URL of the image"
+						/>
+						<button type="submit" class="btn btn-lg bg-danger text-light">
+							Proceed
+							<i class="bi bi-chevron-right"></i>
+						</button>
+					</form>
+				</div>
+			</section>
+
+			<!-- SCRIPT TAGS -->
+			<%- include("partials/script") %>
+			<script src="/scripts/upload.js"></script>
+		</body>
+	</body>
+</html>

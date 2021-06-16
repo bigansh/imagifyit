@@ -1,12 +1,3 @@
-html {
-	margin: 0;
-	padding: 0;
-}
-
-#body {
-	font-family: 'Poppins';
-}
-
 #header {
 	color: #f29d35;
 }
@@ -21,8 +12,4 @@ html {
 
 #showcase-img {
 	width: 80vh;
-}
-
-.navbar-dark {
-	background-color: #000;
 }

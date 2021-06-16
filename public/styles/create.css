@@ -1,3 +1,18 @@
-#form {
-    max-width: 50%;
+.text-input {
+	border: 3px solid #f2575786;
+}
+
+.text-input::placeholder {
+	color: #f2575786;
+}
+
+#text-span {
+	color: #f2575786;
+	border: 3px solid #f2575786;
+	border-right: 0;
+}
+
+#select-option * {
+	color: #f2575786;
+	border: 3px solid #f2575786;
 }

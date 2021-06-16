@@ -3,43 +3,70 @@
 	<head>
 		<!-- META TAGS -->
 		<%- include("partials/meta") %>
-		<!-- END META TAGS -->
 
 		<!-- LINK TAGS -->
 		<%- include("partials/link") %>
 		<link rel="stylesheet" href="/styles/create.css" />
-		<!-- END LINK TAGS -->
 
 		<title>Create / Imagify</title>
 	</head>
 	<body>
-		<form method="POST" action="/create" id="form">
-			<div class="mb-3">
-				<label class="control-label" for="title">Title</label>
-				<input class="form-control" name="title" type="text" id="title" />
-			</div>
-			<div class="mb-3">
-				<label class="control-label" for="Description">Description</label>
-				<textarea
-					class="form-control"
-					name="description"
-					id="description"
-				></textarea>
-			</div>
-			<div class="mb-3">
-				<label class="control-label" for="image">Upload Image</label>
-				<input class="form-control" name="image" type="file" id="image" />
-			</div>
-			<div>
-				<button class="btn btn-primary" id="submit" type="submit">
-					Submit
-				</button>
-			</div>
-		</form>
+		<body id="body" class="bg-light">
+			<!-- NAVBAR -->
+			<%- include("partials/navbar") %>
 
-		<!-- SCRIPT TAGS -->
-		<script src="/scripts/create.js" />
-		<%- include("partials/script") %>
-		<!-- END SCRIPT TAGS -->
+			<!-- DETAILS -->
+			<section class="p-5">
+				<div class="container text-center d-flex justify-content-center">
+					<form action="#" method="post" class="w-75">
+						<input
+							type="text"
+							class="text-input form-control form-control-lg mb-3"
+							placeholder="Title"
+							required
+						/>
+						<input
+							type="text"
+							class="text-input form-control form-control-lg mb-3"
+							placeholder="Description"
+							required
+						/>
+						<input
+							type="text"
+							class="text-input form-control form-control-lg mb-3"
+							placeholder="Destination URL"
+							required
+						/>
+						<div class="input-group mb-3">
+							<span class="input-group-text bg-light" id="text-span"
+								>imagify.it/</span
+							>
+							<input
+								type="text"
+								class="form-control form-control-lg text-input"
+								placeholder="Alias"
+							/>
+						</div>
+						<select
+							id="select-option"
+							class="form-select form-select-lg text-input bg-light mb-4"
+							required
+						>
+							<option value="#">Select card type</option>
+							<option value="#">Large</option>
+							<option value="#">Small</option>
+						</select>
+						<button type="submit" class="btn btn-lg bg-danger text-light">
+							Create
+							<i class="bi bi-chevron-right"></i>
+						</button>
+					</form>
+				</div>
+			</section>
+
+			<!-- SCRIPT TAGS -->
+			<%- include("partials/script") %>
+			<script src="/scripts/create.js"></script>
+		</body>
 	</body>
 </html>
