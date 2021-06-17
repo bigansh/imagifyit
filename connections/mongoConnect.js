@@ -1,5 +1,4 @@
-const mongoose = require('mongoose'),
-	dotenv = require('dotenv').config()
+const mongoose = require('mongoose')
 
 const dbConnect = (databaseURL) => {
 	mongoose

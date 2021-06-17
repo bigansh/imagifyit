@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const dynamoose = require('dynamoose')
 
-const ogSchema = mongoose.Schema({
+const ogSchema = new dynamoose.Schema({
 	title: String,
 	description: String,
 	image: String,
@@ -8,4 +8,4 @@ const ogSchema = mongoose.Schema({
 	id: String,
 })
 
-module.exports = mongoose.model('OG', ogSchema)
+module.exports = dynamoose.model('OG', ogSchema)

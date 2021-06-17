@@ -1,16 +1,17 @@
-const mongoose = require('mongoose')
+const dynamoose = require('dynamoose')
+const OG = require('./ogSchema')
 
-const userSchema = mongoose.Schema({
+const userSchema = dynamoose.Schema({
 	email: String,
 	image: String,
 	name: String,
 	id: String,
-	urls: [
+	OGs: [
 		{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'URLs',
+			type: Object,
+			Schema: OG,
 		},
 	],
 })
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = dynamoose.model('User', userSchema)
