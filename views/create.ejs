@@ -18,11 +18,12 @@
 			<!-- DETAILS -->
 			<section class="p-5">
 				<div class="container text-center d-flex justify-content-center">
-					<form action="#" method="post" class="w-75">
+					<form action="/create/details" method="post" class="w-75">
 						<input
 							type="text"
 							class="text-input form-control form-control-lg mb-3"
 							placeholder="Title"
+							name="title"
 							required
 							id="title-input"
 						/>
@@ -31,12 +32,14 @@
 							type="text"
 							class="text-input form-control form-control-lg mb-3"
 							placeholder="Description"
+							name="description"
 							required
 							id="description-input"
 						/>
 
 						<input
 							type="text"
+							name="destination"
 							class="text-input form-control form-control-lg mb-3"
 							placeholder="Destination URL"
 							required
@@ -48,6 +51,7 @@
 							</span>
 							<input
 								type="text"
+								name="alias"
 								class="form-control form-control-lg text-input"
 								placeholder="Alias"
 							/>
@@ -57,6 +61,7 @@
 							id="select-option"
 							class="form-select form-select-lg text-input bg-light mb-4"
 							required
+							name="card"
 							title="Select the card size"
 						>
 							<option value="large">Card Type - Large</option>
@@ -80,6 +85,12 @@
 						>
 							<div class="border-end" id="card-image-small">
 								<img src="<%= image %>" alt="#" class="img-fluid" />
+								<input
+									type="text"
+									name="image"
+									class="d-none"
+									value="<%= image %>"
+								/>
 							</div>
 							<div class="p-2 text-start">
 								<h4 class="mb-1 card-title">Title</h4>

@@ -1,11 +1,12 @@
 const dynamoose = require('dynamoose')
 
 const ogSchema = new dynamoose.Schema({
+	id: String,
 	title: String,
 	description: String,
 	image: String,
 	cardType: String,
-	id: String,
+	destination: String,
 })
 
-module.exports = dynamoose.model('OG', ogSchema)
+module.exports = dynamoose.model('OpenGraph', ogSchema)

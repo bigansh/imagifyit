@@ -1,17 +1,16 @@
 const dynamoose = require('dynamoose')
-const OG = require('./ogSchema')
 
-const userSchema = dynamoose.Schema({
+const OpenGraph = require('./ogSchema')
+
+const userSchema = new dynamoose.Schema({
+	id: String,
 	email: String,
 	image: String,
 	name: String,
-	id: String,
-	OGs: [
-		{
-			type: Object,
-			Schema: OG,
-		},
-	],
+	OGs: {
+		type: Array,
+		schema: [OpenGraph],
+	},
 })
 
 module.exports = dynamoose.model('User', userSchema)

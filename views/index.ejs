@@ -6,19 +6,24 @@
 
 		<!-- LINK TAGS -->
 		<%- include("partials/link") %>
-		<link rel="stylesheet" href="/styles/index.css">
+		<link rel="stylesheet" href="/styles/index.css" />
 
 		<title>Imagify - Imagify Your Images</title>
 	</head>
 	<body>
 		<body id="body" class="bg-light">
 			<!-- NAVBAR -->
-			<%- include("partials/navbar") %> 
-	
+			<%- include("partials/navbar") %>
+
 			<!-- SHOWCASE -->
 			<section class="p-5">
 				<div
-					class="container text-center text-md-start d-md-flex align-items-center"
+					class="
+						container
+						text-center text-md-start
+						d-md-flex
+						align-items-center
+					"
 				>
 					<div>
 						<h1 id="header" class="fw-bold">Go From Link To Image!</h1>
@@ -31,11 +36,11 @@
 							stand out.
 						</p>
 						<a id="btn-showcase" href="/create" class="btn btn-lg text-light">
-							Get Started 
+							Get Started
 							<i class="bi bi-chevron-right"></i>
 						</a>
 					</div>
-	
+
 					<div class="d-md-block d-none">
 						<img
 							src="/images/Index-Showcase.svg"
@@ -47,7 +52,8 @@
 				</div>
 			</section>
 
-		<!-- SCRIPT TAGS -->
-		<%- include("partials/script") %>
+			<!-- SCRIPT TAGS -->
+			<%- include("partials/script") %>
+		</body>
 	</body>
 </html>

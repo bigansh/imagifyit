@@ -5,7 +5,7 @@ const express = require('express'),
 const uploader = require('../functions/uploader'),
 	creator = require('../functions/creator')
 
-router.get('/', (_req, res) => {
+router.get('/', (req, res) => {
 	res.render('upload')
 })
 
@@ -26,12 +26,22 @@ router.post('/', async (req, res) => {
 	}
 })
 
+router.get('/details', (req, res) => {
+	res.redirect('/create')
+})
+
 router.post('/details', async (req, res) => {
 	try {
+		if (!req.body.alias) req.body.alias = new uniqid()
+
 		const response = await creator(req.body)
 	} catch (error) {
 		console.log(error, 'error')
 	}
+})
+
+router.get('/:route', (req, res) => {
+	res.redirect('/')
 })
 
 module.exports = router
