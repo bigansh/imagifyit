@@ -11,30 +11,27 @@ const authRoute = require('./router/authRoute'),
 	redirectRoute = require('./router/redirectRoute'),
 	legalRoute = require('./router/legalRoute'),
 	createRoute = require('./router/createRoute'),
-	imageRoute = require('./router/imageRoute'),
-	indexRoute = require('./router/indexRoute')
+	viewRoute = require('./router/viewRoute'),
+	indexRoute = require('./router/indexRoute'),
+	apiRoute = require('./router/apiRoute')
 
 dbConnect(process.env.DATABASE_URL)
 dynamoConnect()
 
-app.use(expressSanitizer())
 app.set('view engine', 'ejs')
+
+app.use(expressSanitizer())
 app.use(express.static('public'))
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
 
 app.use('/', indexRoute)
-
 app.use('/auth', authRoute)
-
 app.use('/create', createRoute)
-
-app.use('/image', imageRoute)
-
+app.use('/view', viewRoute)
 app.use('/dashboard', dashboardRoute)
-
 app.use('/legal', legalRoute)
-
+app.use('/api', apiRoute)
 app.use('/:slug', redirectRoute)
 
 app.listen(process.env.PORT, () => {

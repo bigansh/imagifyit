@@ -1,5 +1,5 @@
 const express = require('express'),
-	uniqid = require('uniqid'),
+	shortid = require('shortid'),
 	router = express.Router()
 
 const uploader = require('../functions/uploader'),
@@ -32,9 +32,11 @@ router.get('/details', (req, res) => {
 
 router.post('/details', async (req, res) => {
 	try {
-		if (!req.body.alias) req.body.alias = new uniqid()
+		if (!req.body.alias) req.body.alias = shortid.generate()
 
 		const response = await creator(req.body)
+
+		res.redirect(`/view/${response.id}`)
 	} catch (error) {
 		console.log(error, 'error')
 	}

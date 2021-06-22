@@ -1,5 +1,4 @@
 const OpenGraph = require('../models/ogSchema')
-const User = require('../models/userSchema')
 
 const ogSchema = require('../schema/og')
 

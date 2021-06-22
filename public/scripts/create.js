@@ -1,6 +1,7 @@
 const card_type = document.getElementById('select-option'),
 	small_card = document.getElementById('card-small'),
-	large_card = document.getElementById('card-large')
+	large_card = document.getElementById('card-large'),
+	alias = document.getElementById('alias')
 
 const card_title = [...document.getElementsByClassName('card-title')],
 	card_description = [...document.getElementsByClassName('card-description')]
@@ -31,4 +32,12 @@ description_input.addEventListener('change', () => {
 		if (description_input.value === '') description.innerHTML = 'Description'
 		else description.innerHTML = description_input.value
 	})
+})
+
+alias.addEventListener('change', async () => {
+	const result = await fetch(`/api/alias-check/${alias.value}`, {
+		method: 'POST',
+	})
+
+	console.log(result)
 })

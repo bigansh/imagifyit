@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- META TAGS -->
+		<%- include("partials/meta") %>
+
+		<!-- LINK TAGS -->
+		<%- include("partials/link") %>
+		<link rel="stylesheet" href="/styles/view.css" />
+
+		<title>View / Imagify</title>
+	</head>
+
+	<body id="body" class="bg-light">
+		<!-- NAVBAR -->
+		<%- include("partials/navbar") %>
+
+		<!-- DETAILS -->
+		<section class="p-5">
+			<div class="container text-center">
+				<!-- <div
+						id="card-small"
+						class="border rounded d-flex w-50 align-items-start"
+					>
+						<div class="border-end" id="card-image-small">
+							<img
+								src="https://www.dccomics.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg"
+								alt="#"
+								class="img-fluid"
+							/>
+						</div>
+						<div class="p-2 text-start">
+							<h4 class="mb-1 card-title">Title</h4>
+							<div class="mb-1 card-description">Description</div>
+							<em><strong>imagify.xyz</strong></em>
+						</div>
+					</div> -->
+
+				<div id="card-large" class="border rounded d-inline-block me-0 mb-4">
+					<div class="border-bottom">
+						<img src="<%= og.image %>" alt="#" id="card-image" />
+					</div>
+					<div class="p-2 text-start">
+						<h4 class="mb-1 card-title"><%= og.title %></h4>
+						<p class="mb-1 card-description"><%= og.description %></p>
+						<em>imagify.xyz</em>
+					</div>
+				</div>
+
+				<div>
+					<h1 class="mb-3">Here is your imagified link!</h1>
+					<a href="<%=`https://imagify.xyz/${og.id}` %>" class="h3" id="link">
+						<em><%= `https://imagify.xyz/${og.id}` %></em>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- SCRIPT TAGS -->
+		<%- include("partials/script") %>
+		<script src="/scripts/view.js"></script>
+	</body>
+</html>

@@ -52,6 +52,7 @@
 							<input
 								type="text"
 								name="alias"
+								id="alias"
 								class="form-control form-control-lg text-input"
 								placeholder="Alias"
 							/>
@@ -68,7 +69,7 @@
 							<option value="small">Card Type - Small</option>
 						</select>
 
-						<div id="card-large" class="border rounded mb-4">
+						<div id="card-large" class="border d-inline-block rounded mb-4">
 							<div class="border-bottom">
 								<img src="<%= image %>" alt="#" id="card-image" />
 							</div>
@@ -81,16 +82,10 @@
 
 						<div
 							id="card-small"
-							class="border d-none rounded mb-4 d-flex w-75 align-items-start"
+							class="border d-none d-inline-block rounded mb-4 d-flex w-75 align-items-start"
 						>
 							<div class="border-end" id="card-image-small">
 								<img src="<%= image %>" alt="#" class="img-fluid" />
-								<input
-									type="text"
-									name="image"
-									class="d-none"
-									value="<%= image %>"
-								/>
 							</div>
 							<div class="p-2 text-start">
 								<h4 class="mb-1 card-title">Title</h4>
@@ -98,6 +93,13 @@
 								<em><strong>imagify.xyz</strong></em>
 							</div>
 						</div>
+
+						<input
+							type="text"
+							name="image"
+							class="d-none"
+							value="<%= image %>"
+						/>
 
 						<button type="submit" class="btn btn-lg bg-danger text-light">
 							Create
