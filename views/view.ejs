@@ -18,24 +18,7 @@
 		<!-- DETAILS -->
 		<section class="p-5">
 			<div class="container text-center">
-				<!-- <div
-						id="card-small"
-						class="border rounded d-flex w-50 align-items-start"
-					>
-						<div class="border-end" id="card-image-small">
-							<img
-								src="https://www.dccomics.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg"
-								alt="#"
-								class="img-fluid"
-							/>
-						</div>
-						<div class="p-2 text-start">
-							<h4 class="mb-1 card-title">Title</h4>
-							<div class="mb-1 card-description">Description</div>
-							<em><strong>imagify.xyz</strong></em>
-						</div>
-					</div> -->
-
+				<% if (og.cardType === 'large') { %>
 				<div id="card-large" class="border rounded d-inline-block me-0 mb-4">
 					<div class="border-bottom">
 						<img src="<%= og.image %>" alt="#" id="card-image" />
@@ -46,6 +29,21 @@
 						<em>imagify.xyz</em>
 					</div>
 				</div>
+				<% } %> <% if (og.cardType === 'small') { %>
+				<div
+					id="card-small"
+					class="border rounded d-flex w-50 align-items-start"
+				>
+					<div class="border-end" id="card-image-small">
+						<img src="<%= og.image %>" alt="#" class="img-fluid" />
+					</div>
+					<div class="p-2 text-start">
+						<h4 class="mb-1 card-title"><%= og.title %></h4>
+						<div class="mb-1 card-description"><%= og.description %></div>
+						<em><strong>imagify.xyz</strong></em>
+					</div>
+				</div>
+				<% } %>
 
 				<div>
 					<h1 class="mb-3">Here is your imagified link!</h1>

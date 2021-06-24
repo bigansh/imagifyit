@@ -11,10 +11,14 @@ router.post('/alias-check/:alias', async (req, res) => {
 	try {
 		const count = await aliasCheck(req.params.alias)
 
-		res.send({ count })
+		res.json({ count })
 	} catch (error) {
 		console.error(error, 'error')
 	}
+})
+
+router.post('/:slug', (req, res) => {
+	res.redirect('/')
 })
 
 module.exports = router

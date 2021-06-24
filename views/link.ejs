@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title><%= title %> ></title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<!-- META TAGS -->
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="robots" content="noindex, follow" />
+
+		<!-- TWITTER OG TAGS -->
+		<% if (og.cardType === 'large') { %>
+		<meta name="twitter:card" content="summary_large_image" />
+		<% } %> <% if (og.cardType === 'small') { %>
+		<meta name="twitter:card" content="summary" />
+		<% } %>
+		<meta name="twitter:title" content="<%= og.title %>" />
+		<meta name="twitter:description" content="<%= og.description %>" />
+		<meta name="twitter:image" content="<%= og.image %>" />
+
+		<!-- OG TAGS -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="<%= og.title %>" />
+		<meta property="og:description" content="<%= og.description %>" />
+		<meta property="og:image" content="<%= og.image %>" />
+
+		<title><%= og.title %></title>
+	</head>
+	<body>
+		<script>
+			location.href = '<%= og.destination %>'
+		</script>
+	</body>
 </html>

@@ -1,19 +1,21 @@
 const express = require('express'),
 	router = express.Router()
 
+const viewOg = require('../functions/view')
+
 router.get('/', (req, res) => {
 	res.redirect('/')
 })
 
-router.get('/:id', (req, res) => {
-	res.render('view', {
-		og: {
-			image: 'https://www.dccomics.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg',
-			title: 'ansh',
-			description: 'agarwal',
-			id: 'king'
-		}
-	})
+router.get('/:id', async (req, res) => {
+	try {
+		const ogDetails = await viewOg(req.params.id)
+
+		if (ogDetails === undefined) res.redirect('/')
+		else if (ogDetails) res.render('view', { og: ogDetails })
+	} catch (error) {
+		console.error(error, 'error')
+	}
 })
 
 module.exports = router
