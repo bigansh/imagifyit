@@ -3,8 +3,7 @@ const express = require('express'),
 	expressSanitizer = require('express-sanitizer'),
 	app = express()
 
-const dbConnect = require('./connections/mongoConnect'),
-	dynamoConnect = require('./connections/dynamoConnect')
+const dynamoConnect = require('./connections/dynamoConnect')
 
 const authRoute = require('./router/authRoute'),
 	dashboardRoute = require('./router/dashboardRoute'),
@@ -15,7 +14,6 @@ const authRoute = require('./router/authRoute'),
 	indexRoute = require('./router/indexRoute'),
 	apiRoute = require('./router/apiRoute')
 
-dbConnect(process.env.DATABASE_URL)
 dynamoConnect()
 
 app.set('view engine', 'ejs')

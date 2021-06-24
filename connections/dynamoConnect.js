@@ -6,6 +6,7 @@ const dynamoDB = new dynamoose.aws.sdk.DynamoDB({
 	secretAccessKey: process.env.SECRET_ACCESS_KEY,
 	region: 'us-east-1',
 })
+
 const dbConnect = () => {
 	dynamoose.aws.ddb.set(dynamoDB)
 }
