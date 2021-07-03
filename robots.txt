@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Display: /api/*
+Disallow: /api/*
 
 Sitemap: https://www.imagify.xyz/sitemap.xml
