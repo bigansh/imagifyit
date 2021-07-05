@@ -11,7 +11,7 @@
 		<title>Upload / Imagify</title>
 	</head>
 	<body>
-		<body id="body" class="bg-light">
+		<div class="main bg-light">
 			<!-- NAVBAR -->
 			<%- include("partials/navbar") %>
 
@@ -66,10 +66,10 @@
 
 			<!-- FOOTER -->
 			<%- include("partials/footer") %>
-
-			<!-- SCRIPT TAGS -->
-			<%- include("partials/script") %>
-			<script src="/scripts/upload.js"></script>
-		</body>
+		</div>
+		
+		<!-- SCRIPT TAGS -->
+		<%- include("partials/script") %>
+		<script src="/scripts/upload.js"></script>
 	</body>
 </html>

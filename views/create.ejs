@@ -11,7 +11,7 @@
 		<title>Create / Imagify</title>
 	</head>
 	<body>
-		<body id="body" class="bg-light">
+		<div class="main bg-light">
 			<!-- NAVBAR -->
 			<%- include("partials/navbar") %>
 
@@ -111,10 +111,10 @@
 			
 			<!-- FOOTER -->
 			<%- include("partials/footer") %>
+		</div>
 
-			<!-- SCRIPT TAGS -->
-			<%- include("partials/script") %>
-			<script src="/scripts/create.js"></script>
-		</body>
+		<!-- SCRIPT TAGS -->
+		<%- include("partials/script") %>
+		<script src="/scripts/create.js"></script>
 	</body>
 </html>
