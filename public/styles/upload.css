@@ -6,8 +6,9 @@ section {
 }
 
 #uploader {
+	/* align-items: center; */
 	min-width: 30em;
-	width: 70vw;
+	width: 65vw;
 	background-color: #f2575736;
 	/* z-index: 1; */
 	border: 3px solid #f2575786;
@@ -16,7 +17,8 @@ section {
 
 #uploader-icon {
 	min-width: 10em;
-	width: 30vw;
+	max-width: 15em;
+	padding: 2vw;
 	opacity: 25%;
 }
 
@@ -27,7 +29,7 @@ section {
 }
 
 #uploader-input {
-	visibility: hidden;
+	display: none;
 	/* height: 100%;
 	width: 100%; */
 }
