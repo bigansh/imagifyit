@@ -1,15 +1,23 @@
-#header {
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#title {
 	color: #f29d35;
 }
 
-#sub-header {
+#description {
 	color: #f25757;
 }
 
 #btn-showcase {
-	background: #96e6ad;
+	background: #56bd73;
 }
 
 #showcase-img {
-	width: 80vh;
+	min-width: 25em;
+	width: 35em;
 }
