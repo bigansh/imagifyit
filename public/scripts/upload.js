@@ -3,6 +3,10 @@ const uploader_input = document.getElementById('uploader-input')
 const upload_form = document.getElementById('upload-form')
 const base64URL = document.getElementById('base64URL')
 
+uploader.addEventListener('click', e => {
+	uploader_input.click();
+});
+
 const reader = new FileReader()
 
 uploader_input.addEventListener('change', () => {
