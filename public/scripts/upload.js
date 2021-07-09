@@ -19,14 +19,15 @@ uploader_div.addEventListener('click', (e) => {
 file.addEventListener('change', () => {
 	reader.readAsDataURL(file.files[0])
 
-	reader.onload = (event) => {
-		const result = event.target.result
+	base64URL.value = result
+	setTimeout(() => {
+		uploader_text.innerText = 'Image uploaded'
+	}, 5000)
 
-		base64URL.value = result
+	base64URL.value = result
 
-		uploader_form.classList.toggle('d-none')
-		resizer_form.classList.toggle('d-none')
-	}
+	uploader_form.classList.toggle('d-none')
+	resizer_form.classList.toggle('d-none')
 })
 
 uploader_url.addEventListener('change', () => {
