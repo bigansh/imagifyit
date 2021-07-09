@@ -12,10 +12,10 @@
 	border-right: 0;
 }
 
-/* #select-option * {
+#select-option * {
 	color: #f2575786;
 	border: 3px solid #f2575786;
-} */
+}
 
 #card-large {
 	max-width: 350px;
