@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/*
 
-Sitemap: https://www.imagify.xyz/sitemap.xml
+Sitemap: https://www.imagifyit.ml/sitemap.xml

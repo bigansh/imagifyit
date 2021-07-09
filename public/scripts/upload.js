@@ -1,27 +1,35 @@
-const uploader = document.getElementById('uploader')
-const uploader_input = document.getElementById('uploader-input')
-const uploader_text = document.getElementById('uploader-text')
-const upload_form = document.getElementById('upload-form')
-const base64URL = document.getElementById('base64URL')
+const main_form = document.getElementById('main-form'),
+	uploader_form = document.getElementById('uploader-form'),
+	resizer_form = document.getElementById('resizer-form')
 
-uploader.addEventListener('click', e => {
-	uploader_input.click();
-});
+const uploader_div = document.getElementById('uploader-div'),
+	file = document.getElementById('file'),
+	base64URL = document.getElementById('base64URL'),
+	uploader_url = document.getElementById('img-url')
 
-const reader = new FileReader()
+const canvas = document.getElementById('canvas')
 
-uploader_input.addEventListener('change', () => {
-	uploader_text.innerText = 'Uploading...'
-	reader.readAsDataURL(uploader_input.files[0])
+const reader = new FileReader(),
+	img = new Image()
+
+uploader_div.addEventListener('click', (e) => {
+	file.click()
+})
+
+file.addEventListener('change', () => {
+	reader.readAsDataURL(file.files[0])
 
 	reader.onload = (event) => {
 		const result = event.target.result
 
 		base64URL.value = result
-		setTimeout(() =>{
-			uploader_text.innerText = 'Image uploaded'
-		}, 5000)
-		
-		upload_form.submit()
+
+		uploader_form.classList.toggle('d-none')
+		resizer_form.classList.toggle('d-none')
 	}
+})
+
+uploader_url.addEventListener('change', () => {
+	uploader_form.classList.toggle('d-none')
+	resizer_form.classList.toggle('d-none')
 })

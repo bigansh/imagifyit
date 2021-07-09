@@ -1,4 +1,4 @@
-#uploader {
+#uploader-div {
 	min-width: 30em;
 	width: 65vw;
 	background-color: #f2575736;
@@ -11,14 +11,14 @@
 	max-width: 15em;
 	padding: 2vw;
 	margin-top: 1.2em;
-	opacity: 20%;
+	opacity: 12%;
 }
 
 #uploader-text {
 	position: relative;
 	top: -6em;
 	font-weight: 500;
-	color: #f54b4bd0;
+	color: #f2575786;
 	margin-bottom: 1em;
 }
 
@@ -33,4 +33,9 @@
 
 #img-url::placeholder {
 	color: #f2575786;
+}
+
+#select-option * {
+	color: #f2575786;
+	border: 3px solid #f2575786;
 }
