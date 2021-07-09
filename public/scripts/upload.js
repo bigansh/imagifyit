@@ -16,15 +16,27 @@ uploader_div.addEventListener('click', (e) => {
 	file.click()
 })
 
-file.addEventListener('change', () => {
-	reader.readAsDataURL(file.files[0])
+file.addEventListener('change', (e) => {
+	uploadImage(file.files[0])
 
-	base64URL.value = result
-	setTimeout(() => {
-		uploader_text.innerText = 'Image uploaded'
-	}, 5000)
+	uploader_form.classList.toggle('d-none')
+	resizer_form.classList.toggle('d-none')
+})
 
-	base64URL.value = result
+uploader_div.addEventListener('dragover', (e) => {
+	e.preventDefault()
+})
+
+uploader_div.addEventListener('dragleave', (e) => {
+	e.preventDefault()
+})
+
+uploader_div.addEventListener('drop', (e) => {
+	e.preventDefault()
+
+	if (e.dataTransfer.files.length) {
+		uploadImage(e.dataTransfer.files[0])
+	}
 
 	uploader_form.classList.toggle('d-none')
 	resizer_form.classList.toggle('d-none')
@@ -34,3 +46,29 @@ uploader_url.addEventListener('change', () => {
 	uploader_form.classList.toggle('d-none')
 	resizer_form.classList.toggle('d-none')
 })
+
+// file.addEventListener('change', () => {
+// 	reader.readAsDataURL(file.files[0])
+
+// 	base64URL.value = result
+// 	setTimeout(() => {
+// 		uploader_text.innerText = 'Image uploaded'
+// 	}, 5000)
+
+// 	base64URL.value = result
+
+// 	uploader_form.classList.toggle('d-none')
+// 	resizer_form.classList.toggle('d-none')
+// })
+
+const uploadImage = (image) => {
+	reader.readAsDataURL(image)
+
+	reader.onload = (e) => {
+		const result = e.target.result
+
+		base64URL.value = result
+
+		console.log(base64URL.value)
+	}
+}
