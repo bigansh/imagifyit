@@ -1,6 +1,14 @@
 const link = document.getElementById('link')
 
-link.addEventListener('click', (event) => {
-    event.preventDefault()
-    // TODO Execute click and copy
+const range = document.createRange()
+
+link.addEventListener('click', () => {
+	range.selectNode(document.getElementById('link'))
+
+	window.getSelection().removeAllRanges()
+	window.getSelection().addRange(range)
+
+	document.execCommand('copy')
+
+	window.getSelection().removeAllRanges()
 })
