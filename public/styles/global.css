@@ -1,30 +1,7 @@
 :root {
-	--t: #333;
-	/* --n: #4539ec; */
-	/* --n: #2cb43e; */
 	--s: #f0734f;
-
 	--n: #54bd7e;
-
-	/* --p: #ead7c7; */
-	/* --s: #157575; */
-
 	--p: #fff;
-
-	/* --p: #f0ddbc; */
-	/* --s: #3a4257; */
-
-	/* --p: #cdcebc; */
-	/* --s: #325e9d; */
-
-	/* --p: #735a5d; */
-	/* --s: #00858e; */
-
-	/* --p: #f9dca4; */
-	/* --s: #0078a1; */
-
-	/* --p: #8fd9d0; */
-	/* --s: #143b76; */
 }
 
 * {
@@ -34,13 +11,9 @@
 	font-family: 'Poppins';
 }
 
-#logo {
-	margin-right: .5em;
-}
-
 nav {
 	padding: .4em 0;
-	border-bottom: 1px solid var(--t);
+	/* border-bottom: 1px solid var(--t); */
 	background-color: var(--n);
 }	
 
@@ -74,8 +47,7 @@ section {
  }
 
  footer {
-	 /* background-color: var(--t); */
-	 border-top: 1px solid var(--t)
+	 border-top: 1px solid #ccc;
  }
  
  footer a, 

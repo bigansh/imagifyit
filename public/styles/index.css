@@ -3,12 +3,8 @@
 }
 
 #description {
-	color: var(--t);
+	color: #333;
 }
-
-/* #btn-showcase {
-	background: var(--s);
-} */
 
 #showcase-img {
 	padding: none;
