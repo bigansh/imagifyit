@@ -28,14 +28,14 @@
 							id="title-input"
 						/>
 
-						<input
+						<textarea
 							type="text"
 							class="text-input form-control form-control-lg mb-3"
 							placeholder="Description"
 							name="description"
 							required
 							id="description-input"
-						/>
+						></textarea>
 
 						<input
 							type="text"
@@ -82,7 +82,15 @@
 
 						<div
 							id="card-small"
-							class="border d-none d-inline-block rounded mb-4 d-flex w-75 align-items-start"
+							class="
+								border
+								d-none d-inline-block
+								rounded
+								mb-4
+								d-flex
+								w-75
+								align-items-start
+							"
 						>
 							<div class="border-end" id="card-image-small">
 								<img src="<%= image %>" alt="#" class="img-fluid" />
@@ -108,7 +116,7 @@
 					</form>
 				</div>
 			</section>
-			
+
 			<!-- FOOTER -->
 			<%- include("partials/footer") %>
 		</div>

@@ -39,6 +39,8 @@ router.post('/details', async (req, res) => {
 	try {
 		if (!req.body.alias) req.body.alias = shortid.generate()
 
+		req.body.description = req.sanitize(req.body.description)
+
 		const response = await creator(req.body)
 
 		res.redirect(`/view/${response.id}`)
