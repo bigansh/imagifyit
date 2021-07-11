@@ -1,23 +1,17 @@
-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 #title {
-	color: #f29d35;
+	color: var(--s);
 }
 
 #description {
-	color: #f25757;
+	color: var(--t);
 }
 
-#btn-showcase {
-	background: #56bd73;
-}
+/* #btn-showcase {
+	background: var(--s);
+} */
 
 #showcase-img {
-	min-width: 25em;
+	padding: none;
+	min-width: 30em;
 	width: 30em;
 }

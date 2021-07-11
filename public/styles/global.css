@@ -1,3 +1,32 @@
+:root {
+	--t: #333;
+	/* --n: #4539ec; */
+	/* --n: #2cb43e; */
+	--s: #f0734f;
+
+	--n: #54bd7e;
+
+	/* --p: #ead7c7; */
+	/* --s: #157575; */
+
+	--p: #fff;
+
+	/* --p: #f0ddbc; */
+	/* --s: #3a4257; */
+
+	/* --p: #cdcebc; */
+	/* --s: #325e9d; */
+
+	/* --p: #735a5d; */
+	/* --s: #00858e; */
+
+	/* --p: #f9dca4; */
+	/* --s: #0078a1; */
+
+	/* --p: #8fd9d0; */
+	/* --s: #143b76; */
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,22 +34,51 @@
 	font-family: 'Poppins';
 }
 
+#logo {
+	margin-right: .5em;
+}
+
+nav {
+	padding: .4em 0;
+	border-bottom: 1px solid var(--t);
+	background-color: var(--n);
+}	
+
+nav h2{
+	color: var(--p);
+	font-size: 2.5em;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
  }
- 
- .navbar-dark {
-	background-color: #000;
+
+section {
+	color: var(--t);
+	background-color: var(--p);
+}
+
+#btn-showcase {
+	background-color: var(--n);
 }
  
- .main > * {
+.main > * {
 	flex: 1 1 auto;
  }
  
- .main header,
- .main footer {
+.main header,
+.main footer {
 	flex: 0 0 30px;
  }
+
+ footer {
+	 /* background-color: var(--t); */
+	 border-top: 1px solid var(--t)
+ }
  
+ footer a, 
+footer > *{
+	color: var(--t);
+}
