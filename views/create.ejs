@@ -27,13 +27,20 @@
 							id="title-input"
 						/>
 
-						<input
+						<!-- <input
 							type="text"
 							class="text-input form-control form-control-lg mb-3"
 							placeholder="Description"
 							name="description"
 							id="description-input"
-						/>
+						/> -->
+
+						<textarea type="text"
+							class="text-input form-control form-control-lg mb-3"
+							placeholder="Description"
+							name="description"
+							id="description-input" cols="30" rows="5"
+						></textarea>
 
 						<input
 							type="text"
@@ -50,9 +57,9 @@
 							<input
 								type="text"
 								name="alias"
-								id="alias"
+								id="alias-input"
 								class="form-control form-control-lg text-input"
-								placeholder="Alias"
+								placeholder="Alias (optional)"
 							/>
 						</div>
 
@@ -67,28 +74,37 @@
 							<option value="small">Card Type - Small</option>
 						</select>
 
-						<div id="card-large" class="border d-inline-block rounded mb-4">
-							<div class="border-bottom">
-								<img src="<%= image %>" alt="#" id="card-image" />
+						<div 
+							class="d-flex 
+							justify-content-center
+							align-items-start"
+							>
+							<div 
+								id="card-large" 
+								class="border d-inline-block d-none rounded mb-4"
+								>
+								<div class="border-bottom">
+									<img src="<%= image %>" alt="#" id="card-image" />
+								</div>
+								<div class="p-2 text-start">
+									<h4 class="mb-1 card-title">Title</h4>
+									<p class="mb-1 card-description">Description</p>
+									<em>imagifyit.ml</em>
+								</div>
 							</div>
-							<div class="p-2 text-start">
-								<h4 class="mb-1 card-title">Title</h4>
-								<p class="mb-1 card-description">Description</p>
-								<em>imagifyit.ml</em>
-							</div>
-						</div>
 
-						<div
-							id="card-small"
-							class="border d-none d-inline-block rounded mb-4 d-flex w-75 align-items-start"
-						>
-							<div class="border-end" id="card-image-small">
-								<img src="<%= image %>" alt="#" class="img-fluid" />
-							</div>
-							<div class="p-2 text-start">
-								<h4 class="mb-1 card-title">Title</h4>
-								<div class="mb-1 card-description">Description</div>
-								<em><strong>imagifyit.ml</strong></em>
+							<div
+								id="card-small"
+								class="border rounded mb-4 d-flex w-75"
+								>
+								<div class="border-end" >
+									<img src="<%= image %>" alt="#" id="card-image-small" />
+								</div>
+								<div class="p-2 text-start">
+									<h4 class="mb-1 card-title">Title</h4>
+									<div class="mb-1 card-description">Description</div>
+									<em><strong>imagifyit.ml</strong></em>
+								</div>
 							</div>
 						</div>
 
@@ -99,13 +115,15 @@
 							value="<%= image %>"
 						/>
 
-						<button 
+						<div>
+							<button 
 							type="button"
 							id="btn-create"
 							class="btn btn-lg bg-danger text-light">
 							Create
 							<i class="bi bi-chevron-right"></i>
 						</button>
+					</div>
 					</form>
 				</div>
 			</section>

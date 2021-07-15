@@ -1,3 +1,9 @@
+:root {
+	--large-card-width: 22.92em;
+	--large-card-height: 12em;
+	--small-card-dimension: 8em
+}
+
 .text-input {
 	border: 3px solid #f2575786;
 }
@@ -17,20 +23,22 @@
 	border: 3px solid #f2575786;
 }
 
-#card-large {
-	max-width: 350px;
-}
-
 #card-image {
-	width: 100%;
-	max-height: 183px;
-}
-
-#card-small {
-	height: 160px;
+	object-fit: cover;
+	max-width: 39.2em;
+	max-height: 20em;
+	width: var(--large-card-width);
+	height: var(--large-card-height);
+	min-width: 9.55em;
+	min-height: 5em;
 }
 
 #card-image-small {
-	width: 30%;
-	/* max-height: 158px; */
+	height: var(--small-card-dimension);
+	width: var(--small-card-dimension);
+	object-fit: cover;
+}
+
+.err, .err:focus {
+	border-color: #ff6347;
 }
