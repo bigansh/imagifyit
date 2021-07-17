@@ -17,39 +17,35 @@
 
 			<!-- DETAILS -->
 			<section class="p-5">
-				<div class="container text-center d-flex justify-content-center">
+				<div class="container d-flex justify-content-center">
 					<form action="/create/details" method="post" id="create-form" class="w-75">
+						<small id="title-error">Enter Title here</small>
 						<input
 							type="text"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Title"
+							class="text-input form-control form-control-lg mb-2"
+							placeholder="Title (Max. 32 characters)"
 							name="title"
 							id="title-input"
 						/>
-
-						<!-- <input
-							type="text"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Description"
-							name="description"
-							id="description-input"
-						/> -->
-
+						
+						<small id="description-error">Enter Description here</small>
 						<textarea type="text"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Description"
+							class="text-input form-control form-control-lg mb-2"
+							placeholder="Description (Max. 256 characters)"
 							name="description"
 							id="description-input" cols="30" rows="5"
 						></textarea>
 
+						<small id="url-error">Enter Destination URL here</small>
 						<input
 							type="text"
 							name="destination"
 							id="url-input"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Destination URL"
+							class="text-input form-control form-control-lg mb-2"
+							placeholder="Destination URL ( http or https )"
 						/>
 
+						<small id="alias-error">alias error text</small>
 						<div class="input-group mb-3">
 							<span class="input-group-text bg-light" id="text-span">
 								imagify.ml/
@@ -81,7 +77,7 @@
 							>
 							<div 
 								id="card-large" 
-								class="border d-inline-block d-none rounded mb-4"
+								class="border d-inline-block rounded mb-4"
 								>
 								<div class="border-bottom">
 									<img src="<%= image %>" alt="#" id="card-image" />
@@ -95,7 +91,7 @@
 
 							<div
 								id="card-small"
-								class="border rounded mb-4 d-flex w-75"
+								class="border rounded mb-4 d-flex d-none w-75"
 								>
 								<div class="border-end" >
 									<img src="<%= image %>" alt="#" id="card-image-small" />
@@ -115,11 +111,11 @@
 							value="<%= image %>"
 						/>
 
-						<div>
+						<div class="text-center">
 							<button 
 							type="button"
-							id="btn-create"
-							class="btn btn-lg bg-danger text-light">
+							id="btn-showcase"
+							class="btn btn-lg text-light">
 							Create
 							<i class="bi bi-chevron-right"></i>
 						</button>

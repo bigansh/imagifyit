@@ -5,22 +5,22 @@
 }
 
 .text-input {
-	border: 3px solid #f2575786;
+	border: 3px solid #f0734f86;
 }
 
 .text-input::placeholder {
-	color: #f2575786;
+	color: #f0734f86;
 }
 
 #text-span {
-	color: #f2575786;
-	border: 3px solid #f2575786;
+	color: #f0734f86;
+	border: 3px solid #f0734f86;
 	border-right: 0;
 }
 
 #select-option * {
-	color: #f2575786;
-	border: 3px solid #f2575786;
+	color: #f0734f86;
+	border: 3px solid #f0734f86;
 }
 
 #card-image {
@@ -41,4 +41,13 @@
 
 .err, .err:focus {
 	border-color: #ff6347;
+}
+
+small {
+	color: #ff6347;
+	visibility: hidden;
+}
+
+small.error {
+	visibility: visible;
 }

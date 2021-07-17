@@ -13,7 +13,7 @@
 
 nav {
 	padding: .4em 0;
-	/* border-bottom: 1px solid var(--t); */
+	border-bottom: 1px solid #ccc;
 	background-color: var(--n);
 }	
 
@@ -36,7 +36,11 @@ section {
 #btn-showcase {
 	background-color: var(--n);
 }
- 
+
+#btn-showcase:hover {
+	background-color: #57b47c;
+}
+
 .main > * {
 	flex: 1 1 auto;
  }
