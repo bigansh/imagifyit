@@ -1,36 +1,63 @@
+:root {
+	--large-card-width: 22.92em;
+	--large-card-height: 12em;
+	--small-card-dimension: 8em
+}
+
 .text-input {
-	border: 3px solid #f2575786;
+	border: 3px solid #f0734f86;
 }
 
 .text-input::placeholder {
-	color: #f2575786;
+	color: #f0734f86;
 }
 
 #text-span {
-	color: #f2575786;
-	border: 3px solid #f2575786;
+	color: #f0734f86;
+	border: 3px solid #f0734f86;
 	border-right: 0;
 }
 
 #select-option * {
-	color: #f2575786;
-	border: 3px solid #f2575786;
-}
-
-#card-large {
-	max-width: 350px;
+	color: #f0734f86;
+	border: 3px solid #f0734f86;
 }
 
 #card-image {
-	width: 100%;
-	max-height: 183px;
-}
-
-#card-small {
-	height: 160px;
+	object-fit: cover;
+	/* object-position: 0 50%; */
+	max-width: 39.2em;
+	max-height: 20em;
+	width: var(--large-card-width);
+	height: var(--large-card-height);
+	min-width: 9.55em;
+	min-height: 5em;
 }
 
 #card-image-small {
-	width: 30%;
-	/* max-height: 158px; */
+	height: var(--small-card-dimension);
+	width: var(--small-card-dimension);
+	object-fit: cover;
+	/* object-position: 0 50%; */
+}
+
+#spin {
+	position: relative;
+	float: right;
+	margin-right: 1em;
+	bottom: 2.7em;
+	visibility: hidden;
+}
+
+.err, .err:focus {
+	border-color: #ff6347;
+}
+
+small {
+	color: #ff6347;
+	visibility: hidden;
+}
+
+small.error {
+	visibility: visible;
 }

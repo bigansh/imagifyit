@@ -14,7 +14,7 @@ router.get('/:id', async (req, res) => {
 		if (ogDetails === undefined) res.redirect('/')
 		else if (ogDetails) res.render('view', { og: ogDetails })
 	} catch (error) {
-		console.error(error, 'error')
+		console.log(error, 'error')
 	}
 })
 

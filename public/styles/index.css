@@ -3,15 +3,12 @@
 }
 
 #description {
-	color: var(--t);
+	color: #333;
 }
-
-/* #btn-showcase {
-	background: var(--s);
-} */
 
 #showcase-img {
 	padding: none;
-	min-width: 30em;
-	width: 30em;
+	min-width: 28em;
+	width: 42em;
+	height: auto;
 }

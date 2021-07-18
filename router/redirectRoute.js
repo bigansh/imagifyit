@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 		if (ogDetails === undefined) res.redirect('/')
 		else if (ogDetails) res.render('link', { og: ogDetails })
 	} catch (error) {
-		console.error(error, 'error')
+		console.log(error, 'error')
 	}
 })
 
