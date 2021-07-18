@@ -25,6 +25,7 @@
 
 #card-image {
 	object-fit: cover;
+	/* object-position: 0 50%; */
 	max-width: 39.2em;
 	max-height: 20em;
 	width: var(--large-card-width);
@@ -37,6 +38,15 @@
 	height: var(--small-card-dimension);
 	width: var(--small-card-dimension);
 	object-fit: cover;
+	/* object-position: 0 50%; */
+}
+
+#spin {
+	position: relative;
+	float: right;
+	margin-right: 1em;
+	bottom: 2.7em;
+	visibility: hidden;
 }
 
 .err, .err:focus {

@@ -22,7 +22,7 @@
 						<small id="title-error">Enter Title here</small>
 						<input
 							type="text"
-							class="text-input form-control form-control-lg mb-2"
+							class="text-input form-control form-control-lg mb-3"
 							placeholder="Title (Max. 32 characters)"
 							name="title"
 							id="title-input"
@@ -30,7 +30,7 @@
 						
 						<small id="description-error">Enter Description here</small>
 						<textarea type="text"
-							class="text-input form-control form-control-lg mb-2"
+							class="text-input form-control form-control-lg mb-3"
 							placeholder="Description (Max. 256 characters)"
 							name="description"
 							id="description-input" cols="30" rows="5"
@@ -41,12 +41,12 @@
 							type="text"
 							name="destination"
 							id="url-input"
-							class="text-input form-control form-control-lg mb-2"
-							placeholder="Destination URL ( http or https )"
+							class="text-input form-control form-control-lg mb-3"
+							placeholder="Destination URL"
 						/>
 
 						<small id="alias-error">alias error text</small>
-						<div class="input-group mb-3">
+						<div class="input-group mb-2">
 							<span class="input-group-text bg-light" id="text-span">
 								imagify.ml/
 							</span>
@@ -57,6 +57,9 @@
 								class="form-control form-control-lg text-input"
 								placeholder="Alias (optional)"
 							/>
+						</div>
+						<div id="spin" class="spinner-border spinner-border-sm text-secondary" role="status">
+							<span class="sr-only"></span>
 						</div>
 
 						<select

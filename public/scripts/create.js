@@ -104,10 +104,12 @@ url_input.addEventListener('input', () => {
 
 alias_input.addEventListener('change', async () => {
 	
+	document.getElementById('spin').style.visibility = 'visible'
 	const result = await fetch(`/api/alias-check/${alias_input.value}`, {
 		method: 'POST',
 	})
-	
+	document.getElementById('spin').style.visibility = 'hidden'
+
 	const count = await result.json().then(res => res.count)
 	
 	alias_check =  text_pattern.test(alias_input.value) && (count === 0)
@@ -117,8 +119,12 @@ alias_input.addEventListener('change', async () => {
 		errorStyle(alias_input, alias_error)
 	}
 	
-	else 
+	else {
+		alias_error.innerText = 'Alias available !'
 		initialStyle(alias_input, alias_error)
+		alias_error.style.color = '#28a745'
+		alias_error.style.visibility = 'visible'
+	}
 })
 
 card_type.addEventListener('change', () => {
