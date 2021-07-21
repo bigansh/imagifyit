@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/*
+Disallow: /view/*
+Disallow: /create/*
 
-Sitemap: https://www.imagifyit.ml/sitemap.xml
+Sitemap: https://www.imagify.ml/sitemap.xml
