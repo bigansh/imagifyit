@@ -20,8 +20,8 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 app.use(express.json({ limit: '5mb' }))
-app.use(expressSanitizer())
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
+app.use(expressSanitizer())
 
 app.use('/', indexRoute)
 app.use('/auth', authRoute)
