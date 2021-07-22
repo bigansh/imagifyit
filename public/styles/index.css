@@ -12,3 +12,15 @@
 	width: 42em;
 	height: auto;
 }
+
+.header {
+	color: #f0734f;
+}
+
+.grid-item {
+	width: 350px;
+}
+
+.image {
+	max-width: 400px;
+}

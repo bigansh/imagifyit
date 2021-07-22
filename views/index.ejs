@@ -13,18 +13,17 @@
 	<body>
 		<div class="main bg-light">
 			<!-- NAVBAR -->
-			<header>
-				<%- include("partials/navbar") %>
-			</header>
+			<header><%- include("partials/navbar") %></header>
 
 			<!-- SHOWCASE -->
-			<section 
+			<section
 				class="
 					d-flex
-					flex-column
+					flex-grid-itemumn
 					justify-content-center
 					align-items-center
-				">
+				"
+			>
 				<div
 					class="
 						container
@@ -52,7 +51,7 @@
 
 					<div class="d-md-block d-none">
 						<img
-							src="/images/Showcase.svg"
+							src="/images/Showcase.png"
 							alt="#"
 							class="img-fluid"
 							id="showcase-img"
@@ -61,11 +60,89 @@
 				</div>
 			</section>
 
+			<!-- SOCIAL PROOF -->
+			<!-- <%- include("partials/social-proof.ejs") %>  -->
+
+			<!-- WHY -->
+			<section class="p-5" id="why">
+				<div class="container">
+					<h2 class="header text-center fw-bold">
+						Why should you use Imagify?
+					</h2>
+					<div class="row align-items-center">
+						<div class="col text-end">
+							<h3>Lorem ipsum dolor sit amet.</h3>
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Doloribus, rem.
+							</p>
+						</div>
+						<div class="col text-center">
+							<img class="img-fluid image" src="/images/grow.png" alt="#" />
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col order-2 text-start">
+							<h3>Lorem ipsum dolor sit amet consectetur.</h3>
+							<p>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+								nam, rem voluptate quas voluptates eaque?
+							</p>
+						</div>
+						<div class="col text-center order-1">
+							<img class="img-fluid image" src="/images/like.png" alt="#" />
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- FOOTER -->
 			<%- include("partials/footer") %>
-
 		</div>
+
+		<!-- TODO Modal Style -->
+		<!-- MODAL -->
+		<button
+			id="modal-button"
+			class="d-none"
+			data-bs-toggle="modal"
+			data-bs-target="#tutorial"
+		>
+			Open
+		</button>
+		<div class="modal fade" id="tutorial" tabindex="-1">
+			<div class="modal-dialog modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title text-center">How Does It Work?</h3>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+						></button>
+					</div>
+					<div class="text-center">
+						<iframe
+							src="https://www.youtube.com/embed/dJdhzFCVkg8"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							class="rounded"
+							allowfullscreen
+						></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- SCRIPT TAGS -->
+		<script
+			async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"
+		></script>
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="/scripts/index.js"></script>
 		<%- include("partials/script") %>
 	</body>
 </html>
