@@ -7,10 +7,7 @@
 }
 
 #showcase-img {
-	padding: none;
-	min-width: 28em;
-	width: 42em;
-	height: auto;
+	max-width: 40vw;
 }
 
 .header {
