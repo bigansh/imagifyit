@@ -37,10 +37,6 @@ section {
 	background-color: var(--n);
 }
 
-#btn-showcase:hover {
-	background-color: #57b47c;
-}
-
 .main > * {
 	flex: 1 1 auto;
 }

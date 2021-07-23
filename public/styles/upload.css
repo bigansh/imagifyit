@@ -1,8 +1,8 @@
 #uploader-div {
 	min-width: 30em;
 	width: 65vw;
-	background-color: #f0734f36;
-	border: 3px solid #f0734f86;
+	background-color: #f0724f1e;
+	border: 3px solid #f0724f7c;
 	cursor: pointer;
 }
 
@@ -18,7 +18,7 @@
 	position: relative;
 	top: -6em;
 	font-weight: 500;
-	color: #f0734f86;
+	color: #f0734f;
 	margin-bottom: 1em;
 }
 
@@ -28,14 +28,9 @@
 
 #img-url {
 	margin-top: -1.5em;
-	border: 3px solid #f0734f86;
+	border: 3px solid #f0724f7c;
 }
 
 #img-url::placeholder {
-	color: #f0734f86;
-}
-
-#select-option * {
-	color: #f0734f86;
-	border: 3px solid #f0734f86;
+	color: #f0734f;
 }

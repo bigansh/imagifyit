@@ -12,49 +12,88 @@
 		<title>View / Imagify</title>
 	</head>
 	<body>
+		<!-- NO SCRIPT -->
+		<%- include("partials/inline-script.ejs") %>
+
 		<div class="main bg-light">
 			<!-- NAVBAR -->
 			<%- include("partials/navbar") %>
 
 			<!-- DETAILS -->
 			<section class="p-5">
-				<div class="container text-center">
-					<% if (og.cardType === 'large') { %>
-					<div id="card-large" class="border rounded d-inline-block me-0 mb-4">
-						<div class="border-bottom">
-							<img src="<%= og.image %>" alt="#" id="card-image" />
+				<div class="container">
+					<div class="text-center row">
+						<div class="col-md text-md-start mb-5">
+							<h1 class="mb-3 header">Here is your imagified link!</h1>
+							<div class="mb-5">
+								<span class="align-middle h4 fst-italic" id="link">
+									<%= `https://imagify.ml/${og.id}` %>
+								</span>
+								<button id="copy" class="btn ms-2">
+									<i class="bi bi-clipboard"></i>
+								</button>
+							</div>
+							<div>
+								<h3 class="header mb-3">Test it using social debugger!</h3>
+								<div>
+									<span class="fs-2 icons">
+										<a
+											href="https://developers.facebook.com/tools/debug/"
+											target="_blank"
+											class="text-reset text-decoration-none"
+										>
+											<i class="bi bi-facebook"></i>
+										</a>
+									</span>
+									<span class="fs-2 p-3 icons">
+										<a
+											href="https://cards-dev.twitter.com/validator"
+											target="_blank"
+											class="text-reset text-decoration-none"
+										>
+											<i class="bi bi-twitter"></i>
+										</a>
+									</span>
+									<span class="fs-2 icons">
+										<a
+											href="https://www.linkedin.com/post-inspector/"
+											target="_blank"
+											class="text-reset text-decoration-none"
+										>
+											<i class="bi bi-linkedin"></i>
+										</a>
+									</span>
+								</div>
+							</div>
 						</div>
-						<div class="p-2 text-start">
-							<h4 class="mb-1 card-title"><%= og.title %></h4>
-							<p class="mb-1 card-description"><%= og.description %></p>
-							<em>imagifyit.ml</em>
-						</div>
-					</div>
-					<% } %> <% if (og.cardType === 'small') { %>
-					<div
-						id="card-small"
-						class="border rounded d-flex w-50 align-items-start"
-					>
-						<div class="border-end" id="card-image-small">
-							<img src="<%= og.image %>" alt="#" class="img-fluid" />
-						</div>
-						<div class="p-2 text-start">
-							<h4 class="mb-1 card-title"><%= og.title %></h4>
-							<div class="mb-1 card-description"><%= og.description %></div>
-							<em><strong>imagifyit.ml</strong></em>
-						</div>
-					</div>
-					<% } %>
 
-					<div>
-						<h1 class="mb-3">Here is your imagified link!</h1>
-						<div>
-							<span class="h3 fst-italic" id="link">
-								<%= `https://imagifyit.ml/${og.id}` %>
-							</span>
-							<button class="btn btn-danger ms-2">
-								<i class="bi bi-clipboard"></i>
-							</button>
+						<div class="col-md text-md-end">
+							<% if (og.cardType === 'large') { %>
+							<div id="card-large" class="border rounded d-inline-block me-0">
+								<div class="border-bottom">
+									<img src="<%= og.image %>" alt="#" id="card-image" />
+								</div>
+								<div class="p-2 text-start">
+									<h5 class="mb-1 card-title"><%= og.title %></h5>
+									<p class="mb-1 card-description"><%= og.description %></p>
+									<em>imagify.ml</em>
+								</div>
+							</div>
+							<% } %> <% if (og.cardType === 'small') { %>
+							<div
+								id="card-small"
+								class="border rounded d-flex w-50 align-items-start"
+							>
+								<div class="border-end" id="card-image-small">
+									<img src="<%= og.image %>" alt="#" class="img-fluid" />
+								</div>
+								<div class="p-2 text-start">
+									<h5 class="mb-1 card-title"><%= og.title %></h5>
+									<div class="mb-1 card-description"><%= og.description %></div>
+									<em>imagify.ml</em>
+								</div>
+							</div>
+							<% } %>
 						</div>
 					</div>
 				</div>

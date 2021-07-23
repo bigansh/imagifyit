@@ -11,6 +11,9 @@
 		<title>Upload / Imagify</title>
 	</head>
 	<body>
+		<!-- NO SCRIPT -->
+		<%- include("partials/inline-script.ejs") %>
+
 		<div class="main bg-light">
 			<!-- NAVBAR -->
 			<%- include("partials/navbar") %>
@@ -83,7 +86,11 @@
 							/>
 						</div>
 
-						<button type="submit" class="btn btn-lg  text-light" id="btn-showcase">
+						<button
+							type="submit"
+							class="btn btn-lg text-light"
+							id="btn-showcase"
+						>
 							Submit
 							<i class="bi bi-chevron-right"></i>
 						</button>

@@ -1,9 +1,10 @@
-const link = document.getElementById('link')
+const link = document.getElementById('link'),
+	button = document.getElementById('copy')
 
 const range = document.createRange()
 
-link.addEventListener('click', () => {
-	range.selectNode(document.getElementById('link'))
+const copyFunction = () => {
+	range.selectNode(link)
 
 	window.getSelection().removeAllRanges()
 	window.getSelection().addRange(range)
@@ -11,4 +12,8 @@ link.addEventListener('click', () => {
 	document.execCommand('copy')
 
 	window.getSelection().removeAllRanges()
-})
+
+	button.innerHTML = 'Copied!'
+}
+
+button.addEventListener('click', copyFunction)

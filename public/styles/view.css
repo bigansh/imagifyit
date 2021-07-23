@@ -16,6 +16,16 @@
 	/* max-height: 158px; */
 }
 
-#link {
-    color: #f0724f;
+#copy {
+	background-color: #54bd7e27;
+	border-color: #54bd7e;
+}
+
+#copy:hover {
+	background-color: #54bd7e;
+	color: white;
+}
+
+.header {
+	color: #f0734f;
 }

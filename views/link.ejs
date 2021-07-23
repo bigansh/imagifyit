@@ -29,6 +29,9 @@
 		<title><%= og.title %></title>
 	</head>
 	<body>
+		<!-- NO SCRIPT -->
+		<%- include("partials/inline-script.ejs") %>
+
 		<script>
 			location.href = '<%= og.destination %>'
 		</script>
