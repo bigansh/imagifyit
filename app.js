@@ -1,6 +1,7 @@
 const express = require('express'),
 	dotenv = require('dotenv').config(),
 	expressSanitizer = require('express-sanitizer'),
+	slashes = require('connect-slashes'),
 	app = express()
 
 const dynamoConnect = require('./connections/dynamoConnect')
@@ -22,6 +23,7 @@ app.use(express.static('public'))
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
 app.use(expressSanitizer())
+app.use(slashes(false))
 
 app.use('/', indexRoute)
 app.use('/auth', authRoute)
