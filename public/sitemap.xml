@@ -1,0 +1,21 @@
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+    <url>
+        <loc>https://imagify.ml/</loc>
+        <lastmod>2021-07-23T13:23:15+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://imagify.ml/legal/privacy-policy</loc>
+        <lastmod>2021-07-23T13:23:15+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://imagify.ml/legal/terms-of-service</loc>
+        <lastmod>2021-07-23T13:23:15+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+</urlset>

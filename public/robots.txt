@@ -3,5 +3,6 @@ Allow: /
 Disallow: /api/*
 Disallow: /view/*
 Disallow: /create/*
+Disallow: /create
 
 Sitemap: https://www.imagify.ml/sitemap.xml
