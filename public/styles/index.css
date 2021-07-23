@@ -6,18 +6,20 @@
 	color: #333;
 }
 
-#showcase-img {
-	max-width: 40vw;
-}
-
 .header {
 	color: #f0734f;
+}
+
+.grid {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .grid-item {
 	width: 350px;
 }
 
-.image {
-	max-width: 400px;
-}
+/* .image {
+	width: 350px;
+} */
