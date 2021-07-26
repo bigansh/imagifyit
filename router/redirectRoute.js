@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 		if (ogDetails === undefined) res.redirect('/')
 		else if (ogDetails) {
 			mixpanel.track('Redirected', {
-				aliasId: ogDetails.id,
+				distinct_id: ogDetails.id,
 			})
 
 			res.render('link', { og: ogDetails })
