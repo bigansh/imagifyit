@@ -2,6 +2,8 @@ const OpenGraph = require('../models/ogSchema')
 
 const ogSchema = require('../schema/og')
 
+const mixpanel = require('../connections/mixpanelConnect')
+
 const creator = async (ogDetails) => {
 	ogSchema.cardType = ogDetails.card
 	ogSchema.description = ogDetails.description
@@ -11,6 +13,8 @@ const creator = async (ogDetails) => {
 	ogSchema.destination = ogDetails.destination
 
 	try {
+		mixpanel.track('OG Created')
+
 		return await OpenGraph.create(ogSchema)
 	} catch (error) {
 		throw new Error(error)

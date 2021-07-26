@@ -3,12 +3,20 @@ const express = require('express'),
 
 const viewOg = require('../functions/view')
 
+const mixpanel = require('../connections/mixpanelConnect')
+
 router.get('/', async (req, res) => {
 	try {
 		const ogDetails = await viewOg(req.params.slug)
 
 		if (ogDetails === undefined) res.redirect('/')
-		else if (ogDetails) res.render('link', { og: ogDetails })
+		else if (ogDetails) {
+			mixpanel.track('Redirected', {
+				aliasId: ogDetails.id,
+			})
+
+			res.render('link', { og: ogDetails })
+		}
 	} catch (error) {
 		console.log(error, 'error')
 	}
