@@ -39,12 +39,13 @@
 
 #card-large {
   margin: auto;
+  width: 438px;
   border-radius: 12px;
   overflow: hidden;
 }
 
 #card-large #card-image {
-  width: 438px;
+  width: 100%;
   height: 220px;
   display: block;
   object-fit: cover;
@@ -122,15 +123,21 @@ small.error {
 }
 
 @media (max-width: 500px) {
-  #card-large #card-image {
+  #card-large {
     width: 375px;
+  }
+
+  #card-large #card-image {
     height: 189px;
   }
 }
 
 @media (max-width: 420px) {
-  #card-large #card-image {
+  #card-large {
     width: 340px;
+  }
+
+  #card-large #card-image {
     height: 171px;
   }
 }
