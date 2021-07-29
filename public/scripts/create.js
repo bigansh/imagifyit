@@ -41,7 +41,7 @@ title_input.addEventListener('input', () => {
 		title_check = text_pattern.test(title_input.value)
 
 		if (title_input.value.length === 0) {
-			title_error.innerText = 'Enter Title here'
+			title_error.innerText = 'Title cannot be empty'
 
 			errorStyle(title_input, title_error)
 		} else if (!title_check) {
@@ -67,7 +67,7 @@ description_input.addEventListener('input', () => {
 		description_check = text_pattern.test(description_input.value)
 
 		if (description_input.value.length === 0) {
-			title_error.innerText = 'Enter Description here'
+			title_error.innerText = 'Description cannot be empty'
 
 			errorStyle(description_input, description_error)
 		} else if (!description_check) {
@@ -92,7 +92,7 @@ description_input.addEventListener('input', () => {
 url_input.addEventListener('input', () => {
 	url_check = url_pattern.test(url_input.value)
 	if (url_input.value.length === 0) {
-		url_error.innerText = 'Enter Destination URL here'
+		url_error.innerText = 'URL cannot be empty'
 	} else if (!url_check) {
 		url_error.innerText = 'Enter a valid URL (Begins with http:// or https:// )'
 
