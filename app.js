@@ -25,6 +25,14 @@ app.use(express.urlencoded({ limit: '5mb', extended: true }))
 app.use(expressSanitizer())
 app.use(slashes(false))
 
+app.use((err, req, res, next) => {
+	if (err.type === 'entity.too.large')
+		res.send(
+			'<p align="center">Please upload an image below the defined limit of 5 MB. <br> Click <a href="/create">here</a> to visit the upload page again.</p>'
+		)
+	else res.redirect('/')
+})
+
 app.use('/', indexRoute)
 app.use('/auth', authRoute)
 app.use('/create', createRoute)

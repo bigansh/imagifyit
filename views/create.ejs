@@ -1,147 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- META TAGS -->
-		<%- include("partials/meta") %>
+  <head>
+    <!-- META TAGS -->
+    <%- include("partials/meta") %>
 
-		<!-- LINK TAGS -->
-		<%- include("partials/link") %>
-		<link rel="stylesheet" href="/styles/create.css" />
+    <!-- LINK TAGS -->
+    <%- include("partials/link") %>
+    <link rel="stylesheet" href="/styles/create.css" />
 
-		<title>Create / Imagify</title>
-	</head>
-	<body>
-		<!-- NO SCRIPT -->
-		<%- include("partials/inline-script.ejs") %> 
+    <title>Create / Imagify</title>
+  </head>
+  <body>
+    <!-- NO SCRIPT -->
+    <%- include("partials/inline-script.ejs") %>
 
-		<div class="main bg-light">
-			<!-- NAVBAR -->
-			<%- include("partials/navbar") %>
+    <div class="main bg-light">
+      <!-- NAVBAR -->
+      <%- include("partials/navbar") %>
 
-			<!-- DETAILS -->
-			<section class="p-5">
-				<div class="container d-flex justify-content-center">
-					<form
-						action="/create/details"
-						method="post"
-						id="create-form"
-						class="w-75"
-					>
-						<small id="title-error">Enter Title here</small>
-						<input
-							type="text"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Title (Max. 32 characters)"
-							name="title"
-							id="title-input"
-						/>
+      <!-- DETAILS -->
+      <section class="section">
+        <div class="container">
+          <form action="/create/details" method="post" id="create-form">
+            <small id="title-error">Enter Title here</small>
+            <input
+              type="text"
+              class="text-input form-control form-control-lg mb-3"
+              placeholder="Title (Max. 32 characters)"
+              name="title"
+              id="title-input"
+            />
 
-						<small id="description-error">Enter Description here</small>
-						<textarea
-							type="text"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Description (Max. 256 characters)"
-							name="description"
-							id="description-input"
-							cols="30"
-							rows="5"
-						></textarea>
+            <small id="description-error">Enter Description here</small>
+            <textarea
+              type="text"
+              class="text-input form-control form-control-lg mb-3"
+              placeholder="Description (Max. 256 characters)"
+              name="description"
+              id="description-input"
+              cols="30"
+              rows="5"
+            ></textarea>
 
-						<small id="url-error">Enter Destination URL here</small>
-						<input
-							type="text"
-							name="destination"
-							id="url-input"
-							class="text-input form-control form-control-lg mb-3"
-							placeholder="Destination URL"
-						/>
+            <small id="url-error">Enter Destination URL here</small>
+            <input
+              type="text"
+              name="destination"
+              id="url-input"
+              class="text-input form-control form-control-lg mb-3"
+              placeholder="Destination URL"
+            />
 
-						<small id="alias-error">alias error text</small>
-						<div class="input-group mb-2">
-							<span class="input-group-text bg-light" id="text-span">
-								imagify.ml/
-							</span>
-							<input
-								type="text"
-								name="alias"
-								id="alias-input"
-								class="form-control form-control-lg text-input"
-								placeholder="Alias (optional)"
-							/>
-						</div>
-						<div
-							id="spin"
-							class="spinner-border spinner-border-sm text-secondary"
-							role="status"
-						>
-							<span class="sr-only"></span>
-						</div>
+            <small id="alias-error">alias error text</small>
+            <div class="input-group mb-2">
+              <span class="input-group-text bg-light" id="text-span">
+                imagify.ml/
+              </span>
+              <input
+                type="text"
+                name="alias"
+                id="alias-input"
+                class="form-control form-control-lg text-input"
+                placeholder="Alias (optional)"
+              />
+            </div>
+            <div
+              id="spin"
+              class="spinner-border spinner-border-sm text-secondary"
+              role="status"
+            >
+              <span class="sr-only"></span>
+            </div>
 
-						<select
-							id="select-option"
-							class="form-select form-select-lg text-input bg-light mb-4"
-							required
-							name="card"
-							title="Select the card size"
-						>
-							<option value="large">Card Type - Large</option>
-							<option value="small">Card Type - Small</option>
-						</select>
+            <select
+              id="select-option"
+              class="form-select form-select-lg text-input bg-light mb-4"
+              required
+              name="card"
+              title="Select the card size"
+            >
+              <option value="large">Card Type - Large</option>
+              <option value="small">Card Type - Small</option>
+            </select>
 
-						<div class="d-flex justify-content-center align-items-start">
-							<div id="card-large" class="border d-inline-block rounded mb-4">
-								<div class="border-bottom">
-									<img src="<%= image %>" alt="#" id="card-image" />
-								</div>
-								<div class="p-2 text-start">
-									<h4 class="mb-1 card-title">Title</h4>
-									<p class="mb-1 card-description">Description</p>
-									<em>imagify.ml</em>
-								</div>
-							</div>
+            <div class="d-flex justify-content-center align-items-start">
+              <div id="card-large" class="border mb-4">
+                <div class="border-bottom">
+                  <img src="<%= image %>" alt="#" id="card-image" />
+                </div>
+                <div class="card-info">
+                  <div class="card-title">Title</div>
+                  <div class="card-description">Description</div>
+                  <div class="card-link">imagify.ml</div>
+                </div>
+              </div>
+              <div id="card-small" class="border mb-4 d-none">
+                <div class="border-end">
+                  <img src="<%= image %>" alt="#" id="card-image" />
+                </div>
+                <div class="card-info">
+                  <div class="card-title">Title</div>
+                  <div class="card-description">Description</div>
+                  <div class="card-link">imagify.ml</div>
+                </div>
+              </div>
+            </div>
 
-							<div
-								id="card-small"
-								class="border rounded mb-4 d-flex d-none w-75"
-							>
-								<div class="border-end">
-									<img src="<%= image %>" alt="#" id="card-image-small" />
-								</div>
-								<div class="p-2 text-start">
-									<h4 class="mb-1 card-title">Title</h4>
-									<div class="mb-1 card-description">Description</div>
-									<em><strong>imagify.ml</strong></em>
-								</div>
-							</div>
-						</div>
+            <input
+              type="text"
+              name="image"
+              class="d-none"
+              value="<%= image %>"
+            />
 
-						<input
-							type="text"
-							name="image"
-							class="d-none"
-							value="<%= image %>"
-						/>
+            <div class="text-center">
+              <button
+                type="button"
+                id="btn-showcase"
+                class="btn btn-lg text-light"
+              >
+                Create
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
 
-						<div class="text-center">
-							<button
-								type="button"
-								id="btn-showcase"
-								class="btn btn-lg text-light"
-							>
-								Create
-								<i class="bi bi-chevron-right"></i>
-							</button>
-						</div>
-					</form>
-				</div>
-			</section>
+      <!-- FOOTER -->
+      <%- include("partials/footer") %>
+    </div>
 
-			<!-- FOOTER -->
-			<%- include("partials/footer") %>
-		</div>
-
-		<!-- SCRIPT TAGS -->
-		<%- include("partials/script") %>
-		<script src="/scripts/create.js"></script>
-	</body>
+    <!-- SCRIPT TAGS -->
+    <%- include("partials/script") %>
+    <script src="/scripts/create.js"></script>
+  </body>
 </html>
