@@ -1,29 +1,51 @@
 :root {
 	--large-card-width: 22.92em;
 	--large-card-height: 12em;
-	--small-card-dimension: 8em
+	--small-card-dimension: 8em;
+	--color: #555;
+}
+
+.label {
+	font-size: .85em;
 }
 
 .text-input {
-	border: 3px solid #f0734f86;
+	border: 1px solid var(--color);
+}
+
+.hint-text {
+	margin-bottom: .1em;
+	font-size: .9em;
+	color: #ff6347;
+	visibility: hidden;
+}
+
+.hint-text.error {
+	visibility: visible;
+}
+
+.text-input:focus {
+	outline-style: none;
 }
 
 .text-input::placeholder {
-	color: #f0734f86;
+	color: #888;
 }
 
 #text-span {
-	color: #f0734f86;
-	border: 3px solid #f0734f86;
+	color: var(--color);
+	border: 1px solid var(--color);
 	border-right: 0;
 }
 
 #select-option * {
-	color: #f0734f86;
-	border: 3px solid #f0734f86;
+	color: var(--color);
+	border: 1px solid var(--color);
 }
 
 #card-image {
+	padding: 1px;
+	border-radius: 3px;;
 	object-fit: cover;
 	/* object-position: 0 50%; */
 	max-width: 39.2em;
@@ -51,13 +73,4 @@
 
 .err, .err:focus {
 	border-color: #ff6347;
-}
-
-small {
-	color: #ff6347;
-	visibility: hidden;
-}
-
-small.error {
-	visibility: visible;
 }

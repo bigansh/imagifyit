@@ -27,37 +27,40 @@
 						id="create-form"
 						class="w-75"
 					>
-						<small id="title-error">Enter Title here</small>
+						<div id="title-text" class="label">Enter Title here</div>
 						<input
 							type="text"
-							class="text-input form-control form-control-lg mb-3"
+							class="text-input form-control"
 							placeholder="Title (Max. 32 characters)"
 							name="title"
 							id="title-input"
 						/>
+						<div class="hint-text" id="title-error"><small>Enter Title here</small></div>
 
-						<small id="description-error">Enter Description here</small>
+						<div id="description-text" class="label">Enter Description here</div>
 						<textarea
 							type="text"
-							class="text-input form-control form-control-lg mb-3"
+							class="text-input form-control"
 							placeholder="Description (Max. 256 characters)"
 							name="description"
 							id="description-input"
 							cols="30"
 							rows="5"
 						></textarea>
+						<div class="hint-text" id="description-error"><small>Enter Description here</small></div>
 
-						<small id="url-error">Enter Destination URL here</small>
+						<div id="url-text"  class="label">Enter Destination URL here</div>
 						<input
 							type="text"
 							name="destination"
 							id="url-input"
-							class="text-input form-control form-control-lg mb-3"
+							class="text-input form-control"
 							placeholder="Destination URL"
 						/>
+						<div class="hint-text" id="url-error"><small>Enter URL here</small></div>
 
-						<small id="alias-error">alias error text</small>
-						<div class="input-group mb-2">
+						<div id="alias-text"  class="label">Enter Alias here</div>
+						<div class="input-group">
 							<span class="input-group-text bg-light" id="text-span">
 								imagify.ml/
 							</span>
@@ -65,7 +68,7 @@
 								type="text"
 								name="alias"
 								id="alias-input"
-								class="form-control form-control-lg text-input"
+								class="form-control text-input"
 								placeholder="Alias (optional)"
 							/>
 						</div>
@@ -76,10 +79,11 @@
 						>
 							<span class="sr-only"></span>
 						</div>
+						<div class="hint-text mb-2"><small id="alias-error">Enter Alias here</small></div>
 
 						<select
 							id="select-option"
-							class="form-select form-select-lg text-input bg-light mb-4"
+							class="form-select text-input bg-light mb-4"
 							required
 							name="card"
 							title="Select the card size"
