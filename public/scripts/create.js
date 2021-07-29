@@ -51,7 +51,7 @@ title_input.addEventListener('input', () => {
 
 			errorStyle(title_input, title_error)
 		} else if (title_input.value.length > 52) {
-			title_error.innerText = 'Title should not exceed 52 characters'
+			title_error.innerText = 'Title should not exceed 32 characters'
 
 			errorStyle(title_input, title_error)
 		} else {
@@ -117,6 +117,7 @@ alias_input.addEventListener('change', async () => {
 
 	if (!(alias_check || alias_input.value === '')) {
 		alias_error.innerText = 'Alias already taken (Try another one)'
+		alias_error.style.color = '#ff6347'
 
 		errorStyle(alias_input, alias_error)
 	} else {
