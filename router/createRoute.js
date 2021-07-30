@@ -27,12 +27,7 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/details', (req, res) => {
-	// res.redirect('/create')
-
-	res.render('create', {
-		image:
-			'https://www.dccomics.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg',
-	})
+	res.redirect('/create')
 })
 
 router.post('/details', async (req, res) => {
