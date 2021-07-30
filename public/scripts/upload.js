@@ -33,11 +33,11 @@ uploader_div.addEventListener('drop', (e) => {
 })
 
 const toBase64 = (image) => {
-	// if (image.size >= 5 * 1048576) {
-	// 	alert('Please upload a file smaller than 5 MB.')
+	if (image.size >= 5 * 1048576) {
+		alert('Please upload a file smaller than 5 MB.')
 		
-	// 	return
-	// }
+		return
+	}
 
 	uploader_text.innerText = 'Uploading...'
 
