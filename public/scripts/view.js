@@ -14,6 +14,7 @@ const copyFunction = () => {
 	window.getSelection().removeAllRanges()
 
 	button.innerHTML = 'Copied!'
+	button.classList.add('disabled')
 }
 
 button.addEventListener('click', copyFunction)
