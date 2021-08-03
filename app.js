@@ -2,6 +2,7 @@ const express = require('express'),
 	dotenv = require('dotenv').config(),
 	expressSanitizer = require('express-sanitizer'),
 	slashes = require('connect-slashes'),
+	helmet = require('helmet'),
 	app = express()
 
 const dynamoConnect = require('./connections/dynamoConnect')
@@ -24,6 +25,11 @@ app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
 app.use(expressSanitizer())
 app.use(slashes(false))
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	})
+)
 
 app.use((err, req, res, next) => {
 	if (err.type === 'entity.too.large')

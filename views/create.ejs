@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- META TAGS -->
-    <%- include("partials/meta") %>
+	<head>
+		<!-- META TAGS -->
+		<%- include("partials/meta") %>
 
-    <!-- LINK TAGS -->
-    <%- include("partials/link") %>
-    <link rel="stylesheet" href="/styles/create.css" />
+		<!-- LINK TAGS -->
+		<%- include("partials/link") %>
+		<link rel="stylesheet" href="/styles/create.css" />
 
-    <title>Create / Imagify</title>
-  </head>
-  <body>
-    <!-- NO SCRIPT -->
-    <%- include("partials/inline-script.ejs") %>
+		<title>Create / Imagify</title>
+	</head>
+	<body>
+		<!-- NO SCRIPT -->
+		<%- include("partials/inline-script.ejs") %>
 
-    <div class="main bg-light">
-      <!-- NAVBAR -->
-      <%- include("partials/navbar") %>
+		<div class="main bg-light">
+			<!-- NAVBAR -->
+			<%- include("partials/navbar") %>
 
-      <!-- DETAILS -->
-      <section class="section">
-        <div class="container">
-          <form action="/create/details" method="post" id="create-form">
-            <small id="title-text">Enter Title here</small>
-            <input
-              type="text"
-              class="text-input form-control form-control-md"
-              placeholder="Title (Max. 32 characters)"
-              name="title"
-              id="title-input"
-            />
-				<div id="title-error" class="hint-text">Title here</div>
+			<!-- DETAILS -->
+			<section class="section">
+				<div class="container">
+					<form action="/create/details" method="post" id="create-form">
+						<small id="title-text">Enter Title here</small>
+						<input
+							type="text"
+							class="text-input form-control form-control-md"
+							placeholder="Title (Max. 32 characters)"
+							name="title"
+							id="title-input"
+						/>
+						<div id="title-error" class="hint-text">Title here</div>
 
-            <small id="description-text">Enter Description here</small>
-            <textarea
-              type="text"
-              class="text-input form-control form-control-md"
-              placeholder="Description (Max. 256 characters)"
-              name="description"
-              id="description-input"
-              cols="30"
-              rows="5"
-            ></textarea>
-				<div id="description-error" class="hint-text">Description here</div>
+						<small id="description-text">Enter Description here</small>
+						<textarea
+							type="text"
+							class="text-input form-control form-control-md"
+							placeholder="Description (Max. 256 characters)"
+							name="description"
+							id="description-input"
+							cols="30"
+							rows="5"
+						></textarea>
+						<div id="description-error" class="hint-text">Description here</div>
 
-            <small id="url-text">Enter Destination URL here</small>
-            <input
-              type="text"
-              name="destination"
-              id="url-input"
-              class="text-input form-control form-control-md"
-              placeholder="Destination URL"
-            />
-				<div id="url-error" class="hint-text">URL here</div>
+						<small id="url-text">Enter Destination URL here</small>
+						<input
+							type="text"
+							name="destination"
+							id="url-input"
+							class="text-input form-control form-control-md"
+							placeholder="Destination URL"
+						/>
+						<div id="url-error" class="hint-text">URL here</div>
 
-            <small id="alias-text">Enter Alias here</small>
-            <div class="input-group">
-              <span class="input-group-text bg-light" id="text-span">
-                imagify.ml/
-              </span>
-              <input
-                type="text"
-                name="alias"
-                id="alias-input"
-                class="form-control text-input"
-                placeholder="Alias (optional)"
-              />
-            </div>
-            <div
-              id="spin"
-              class="spinner-border spinner-border-sm text-secondary"
-              role="status"
-            >
-              <span class="sr-only"></span>
-            </div>
-				<div id="alias-error" class="hint-text mb-2">Alias here</div>
+						<small id="alias-text">Enter Alias here</small>
+						<div class="input-group">
+							<span class="input-group-text bg-light" id="text-span">
+								imagify.ml/
+							</span>
+							<input
+								type="text"
+								name="alias"
+								id="alias-input"
+								class="form-control text-input"
+								placeholder="Alias (optional)"
+							/>
+						</div>
+						<div
+							id="spin"
+							class="spinner-border spinner-border-sm text-secondary"
+							role="status"
+						>
+							<span class="sr-only"></span>
+						</div>
+						<div id="alias-error" class="hint-text mb-2">Alias here</div>
 
-            <select
-              id="select-option"
-              class="form-select form-select-md text-input bg-light mb-4"
-              required
-              name="card"
-              title="Select the card size"
-            >
-              <option value="large">Card Type - Large</option>
-              <option value="small">Card Type - Small</option>
-            </select>
+						<select
+							id="select-option"
+							class="form-select form-select-md text-input bg-light mb-4"
+							required
+							name="card"
+							title="Select the card size"
+						>
+							<option value="large">Card Type - Large</option>
+							<option value="small">Card Type - Small</option>
+						</select>
 
-            <div class="d-flex justify-content-center align-items-start">
-              <div id="card-large" class="border mb-4">
-                <div class="border-bottom">
-                  <img src="<%= image %>" alt="#" id="card-image" />
-                </div>
-                <div class="card-info">
-                  <div class="card-title">Title</div>
-                  <div class="card-description">Description</div>
-                  <div class="card-link">imagify.ml</div>
-                </div>
-              </div>
-              <div id="card-small" class="border mb-4 d-none">
-                <div class="border-end">
-                  <img src="<%= image %>" alt="#" id="card-image" />
-                </div>
-                <div class="card-info">
-                  <div class="card-title">Title</div>
-                  <div class="card-description">Description</div>
-                  <div class="card-link">imagify.ml</div>
-                </div>
-              </div>
-            </div>
+						<div class="d-flex justify-content-center align-items-start">
+							<div id="card-large" class="border mb-4">
+								<div class="border-bottom">
+									<img src="<%= image %>" alt="#" id="card-image" />
+								</div>
+								<div class="card-info">
+									<div class="card-title">Title</div>
+									<div class="card-description">Description</div>
+									<div class="card-link">imagify.ml</div>
+								</div>
+							</div>
+							<div id="card-small" class="border mb-4 d-none">
+								<div class="border-end">
+									<img src="<%= image %>" alt="#" id="card-image" />
+								</div>
+								<div class="card-info">
+									<div class="card-title">Title</div>
+									<div class="card-description">Description</div>
+									<div class="card-link">imagify.ml</div>
+								</div>
+							</div>
+						</div>
 
-            <input
-              type="text"
-              name="image"
-              class="d-none"
-              value="<%= image %>"
-            />
+						<input
+							type="text"
+							name="image"
+							class="d-none"
+							value="<%= image %>"
+						/>
 
-            <div class="text-center">
-              <button
-                type="button"
-                id="btn-showcase"
-                class="btn btn-lg text-light"
-              >
-                Create
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+						<div class="text-center">
+							<button
+								type="button"
+								id="btn-showcase"
+								class="btn btn-lg text-light"
+							>
+								Create
+								<i class="bi bi-chevron-right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
 
-      <!-- FOOTER -->
-      <%- include("partials/footer") %>
-    </div>
+			<!-- FOOTER -->
+			<%- include("partials/footer") %>
+		</div>
 
-    <!-- SCRIPT TAGS -->
-    <%- include("partials/script") %>
-    <script src="/scripts/create.js"></script>
-  </body>
+		<!-- SCRIPT TAGS -->
+		<%- include("partials/script") %>
+		<script src="/scripts/create.js"></script>
+	</body>
 </html>

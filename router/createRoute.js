@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
 		else if (req.body.url) imageUrl = req.body.url
 		else {
 			res.redirect('/create')
+
 			return
 		}
 
