@@ -24,8 +24,12 @@ app.use(express.static('public'))
 app.use(express.json({ limit: '5mb' }))
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
 app.use(expressSanitizer())
-// app.use(helmet())
 app.use(slashes(false))
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	})
+)
 
 app.use((err, req, res, next) => {
 	if (err.type === 'entity.too.large')
