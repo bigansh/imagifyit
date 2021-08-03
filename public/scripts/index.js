@@ -1,9 +1,13 @@
 const grid = document.getElementById('grid'),
 	modal_button = document.getElementById('modal-button')
 
-// TODO Fix the window.scrollTop() not a function error
+let modalCount = 0
 window.onscroll = () => {
-	// if (window.scrollTop() > 1000) modal_button.click()
+	if (document.documentElement.scrollTop > 500 && modalCount == 0) {
+		modal_button.click()
+
+		modalCount++
+	}
 }
 
 window.twttr = ((d, s, id) => {
