@@ -9,13 +9,3 @@
 .header {
 	color: #f0734f;
 }
-
-.grid {
-	height: 100%;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.grid-item {
-	width: 350px;
-}

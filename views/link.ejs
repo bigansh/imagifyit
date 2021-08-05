@@ -33,7 +33,7 @@
 		<%- include("partials/inline-script.ejs") %>
 
 		<script>
-			location.href = '<%= og.destination %>'
+			window.location.replace('<%= og.destination %>')
 		</script>
 	</body>
 </html>

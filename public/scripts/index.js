@@ -2,8 +2,9 @@ const grid = document.getElementById('grid'),
 	modal_button = document.getElementById('modal-button')
 
 let modalCount = 0
+
 window.onscroll = () => {
-	if (document.documentElement.scrollTop > 500 && modalCount == 0) {
+	if (document.documentElement.scrollTop > 1200 && modalCount === 0) {
 		modal_button.click()
 
 		modalCount++
