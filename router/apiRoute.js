@@ -9,9 +9,13 @@ router.get('*', (req, res) => {
 
 router.post('/alias-check/:alias', async (req, res) => {
 	try {
-		const count = await aliasCheck(req.params.alias)
+		if (req.params.alias === 'legal' || req.params.alias === 'create')
+			res.json({ count: 1 })
+		else {
+			const count = await aliasCheck(req.params.alias)
 
-		res.json({ count })
+			res.json({ count })
+		}
 	} catch (error) {
 		console.error(error, 'error')
 	}
